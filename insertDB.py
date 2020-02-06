@@ -14,15 +14,15 @@ Base = declarative_base()
 
 
 class salesOrdersRaw(Base):
-    __tablename__ = 'salesOrders'
+    __tablename__ = 'sales_order'
     __table_args__ = {'extend_existing': True}
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True)
     OrderDate = Column(Date())
     Region = Column(String(20))
     Rep = Column(String(20))
     Item = Column(String(10))
     Units = Column(Integer())
-    UnitCost = Column(Float())
+    UnitCost = Column('Unit Cost', Float())
     Total = Column(Float())
 
 
